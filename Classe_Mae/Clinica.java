@@ -1,19 +1,22 @@
 package Classe_Mae;
 
-import java.util.Scanner;
-
 public class Clinica {
 
-    String nome_C;
-    String nome_D;
-    String nome_A;
-    String raca_A;
-    String servico;
+    public String nome_C;
+    public String nome_D;
+    public String nome_A;
+    public String raca_A;
+    public String servico;
 
     public Clinica (String nome_C, String servico){
-        this.nome_C = nome_C;
-        this.servico = servico;
     }
+        public String setnome_C(String nome_C){
+            return this.nome_C = nome_C;
+        }
+        public String setServico(String servico){
+            return this.servico = servico;
+        }
+
 
     public Clinica (String nome_D, String nome_A, String raca_A){
         this.nome_D = nome_D;
@@ -30,15 +33,6 @@ public class Clinica {
         System.out.println("\nServiços disponíveis:");
         for (int i = 0; i < servicos.length; i++) {
             System.out.println((i+1) + " - " + servicos[i]);
-        }
-        System.out.print("Escolha o número do serviço desejado: ");
-        Scanner sc = new Scanner(System.in);
-        int opcao = sc.nextInt();
-        if (opcao >= 1 && opcao <= servicos.length) {
-            servico = servicos[opcao-1];
-            System.out.println("Serviço escolhido: " + servico);
-        } else {
-            System.out.println("Opção inválida.");
         }
     }
 }
