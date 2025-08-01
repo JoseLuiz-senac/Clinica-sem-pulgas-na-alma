@@ -1,8 +1,7 @@
 package Sub_Classes;
 
-import java.util.Scanner;
-
 import Classe_Mae.Clinica;
+import java.util.Scanner;
 
 public class Exames extends Clinica {
     String Doutor;
@@ -59,14 +58,17 @@ public class Exames extends Clinica {
 	            "10:00", "10:50", "11:40", "12:30", "13:20", "14:10", "15:00", "15:50", "16:40", "17:30","18:20", "19:10", "20:00"
 	        };
     Scanner vet = new Scanner(System.in);
+
+    System.out.println("Digite o exame: ");
+    this.exames = vet.next();
     System.out.println("Digite a data do exame (dd/mm/yyyy): ");
-    String data = vet.next();
+    this.data = vet.next();
     System.out.println("Escolha um horário disponível: ");
     for (int i = 0; i < reservas.length; i++) {
         System.out.println((i + 1) + " - " + reservas[i]);
     }
     int horario = vet.nextInt();
-    String hora = reservas[horario - 1];
+    this.hora = reservas[horario - 1];
         System.out.println("Exame reservado para o dia " + this.data + " às " + this.hora +
             " com o Dr. " + this.Doutor + ". Exame: " + this.exames + ".");
     }

@@ -1,8 +1,7 @@
 package Sub_Classes;
 
-import java.util.Scanner;
-
 import Classe_Mae.Clinica;
+import java.util.Scanner;
 
 public class OrientacaoNutCompor extends Clinica {
     String Doutor;
@@ -60,7 +59,7 @@ public class OrientacaoNutCompor extends Clinica {
     this.hora = vet.nextInt();
     String hora = reservas[this.hora - 1];
         System.out.println("Orientação nutricional e comportamental reservada para o dia " + this.data +
-            " às " + this.hora + " com o Dr. " + this.Doutor + ".");
+            " às " + hora + " com o Dr. " + this.Doutor + ".");
     }
 
     public boolean pagamento(boolean pagou) {

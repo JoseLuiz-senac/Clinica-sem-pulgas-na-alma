@@ -1,8 +1,7 @@
 package Sub_Classes;
 
-import java.util.Scanner;
-
 import Classe_Mae.Clinica;
+import java.util.Scanner;
 
 public class Estetica extends Clinica {
     String Doutor;
@@ -17,6 +16,8 @@ public class Estetica extends Clinica {
         super(nome_C, servico);
         this.Doutor = "Dra. Gaby";
         this.valor = "3.000.000.000,00";
+        this.tossaH = "Tossa Higienica";
+        this.tossaT = "Tossa Total";
     }
 
     public String setDoutor(String Doutor){
@@ -68,13 +69,13 @@ public class Estetica extends Clinica {
 	        };
     Scanner vet = new Scanner(System.in);
     System.out.println("Digite a data da Estetica (dd/mm/yyyy): ");
-    String data = vet.next();
+    this.data = vet.next();
     System.out.println("Escolha um horário disponível: ");
     for (int i = 0; i < reservas.length; i++) {
         System.out.println((i + 1) + " - " + reservas[i]);
     }
     int horario = vet.nextInt();
-    String hora = reservas[horario - 1];
+    this.hora = reservas[horario - 1];
     	
         System.out.println("Estética reservada para o dia " + this.data + " às " + this.hora +
             " com o Dr. " + this.Doutor + ". Tossa Higienica: " + this.tossaH + ", Tossa Total: " + this.tossaT + ".");

@@ -1,6 +1,5 @@
 import Classe_Mae.Clinica;
 import Sub_Classes.Cirugias;
-import java.util.Scanner;
 import Sub_Classes.Consultas;
 import Sub_Classes.Emergencia;
 import Sub_Classes.Estetica;
@@ -9,14 +8,12 @@ import Sub_Classes.Internacao;
 import Sub_Classes.OrientacaoNutCompor;
 import Sub_Classes.Tratamentos;
 import Sub_Classes.Vacinacao;
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
         Clinica c = new Clinica("Sem Pulgas Na Alma", "servicos");
-        String[] reservas = {
-            "10:00", "10:50", "11:40", "12:30", "13:20", "14:10", "15:00", "15:50", "16:40", "17:30","18:20", "19:10", "20:00"
-        };
         Scanner vet = new Scanner(System.in);
-        System.out.println("bom dia, seja bem a Sem Pulgas Na Alma!!");
+        System.out.println("bom dia, seja bem vindo a Sem Pulgas Na Alma!!");
 
         System.out.println("Digite o nome do cliente: ");
         String nomeC = vet.nextLine();
@@ -40,8 +37,6 @@ public class Main {
                 Cirugias cirurgia = new Cirugias(nomeC, "cirurgias", "", "", "", "");
                 System.out.println("Você escolheu cirurgias.");
                 System.out.println("O nome da Doutora é: "+cirurgia.getDoutor());
-                System.out.println("Digite o tipo de cirurgia: ");
-                String cirurgias = vet.next();
                 System.out.println("o valor da cirurgia será R$"+cirurgia.getvalor());
 
 
@@ -58,8 +53,6 @@ public class Main {
             	Consultas consulta = new Consultas(nomeC, "Consulta", "", "", "", "", "");
                 System.out.println("Você escolheu Consulta.");
                 System.out.println("O nome do Doutor é: "+consulta.getDoutor());
-                System.out.println("Digite qual a causa: ");
-                String Consultas = vet.next();
                 System.out.println("o valor da cirurgia será R$"+consulta.getvalor());
 
 
@@ -69,13 +62,13 @@ public class Main {
                 System.out.println("Deseja realizar o pagamento? (true/false)");
                 boolean pagoucon = vet.nextBoolean();
                 consulta.realizarPagamento(pagoucon);
+
+                break;
                 
             case 3:
             	Emergencia emergencias = new Emergencia(nomeC, "Emergencia", "", "", "", "", "");
                 System.out.println("Você escolheu Emergencia.");
                 System.out.println("O nome do Doutor é: "+emergencias.getDoutor());
-                System.out.println("Digite o motivo: ");
-                String Emergencia = vet.next();
                 System.out.println("o valor da cirurgia será R$"+emergencias.getvalor());
 
 
@@ -86,6 +79,7 @@ public class Main {
                 boolean pagouem = vet.nextBoolean();
                 emergencias.pagamento(pagouem);
                 
+                break;
             case 4:
             	Estetica Estetica = new Estetica(nomeC, "Emergencia", "", "", "", "", "", "");
                 System.out.println("Você escolheu Estetica.");
@@ -157,10 +151,10 @@ public class Main {
                 break;
                 
             case 9:
-            	Vacinacao Vacinacao = new Vacinacao(nomeC, "Tratamentos", "", "", "", "");
-                System.out.println("Você escolheu Tratamentos.");
+            	Vacinacao Vacinacao = new Vacinacao(nomeC, "vacinação", "", "", "", "");
+                System.out.println("Você escolheu Vacinação.");
                 System.out.println("O nome da Doutora é: "+Vacinacao.getDoutor());
-                System.out.println("o valor da cirurgia será R$"+Vacinacao.getvalor());
+                System.out.println("o valor da vacinação será R$"+Vacinacao.getvalor());
                 
                 Vacinacao.vacinas();
                 
