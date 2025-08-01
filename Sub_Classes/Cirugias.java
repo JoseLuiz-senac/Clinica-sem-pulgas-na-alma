@@ -1,6 +1,6 @@
 package Sub_Classes;
-import java.util.Scanner;  
 import Classe_Mae.Clinica;
+import java.util.Scanner;
 
 
 public class Cirugias extends Clinica{
@@ -55,10 +55,14 @@ public class Cirugias extends Clinica{
 
    
     public void reservarCirurgia() {
+        Scanner vet = new Scanner(System.in);
+
     	 String[] reservas = {
     	            "10:00", "10:50", "11:40", "12:30", "13:20", "14:10", "15:00", "15:50", "16:40", "17:30","18:20", "19:10", "20:00"
     	        };
-        Scanner vet = new Scanner(System.in);
+
+        System.out.println("Digite o tipo de cirurgia: ");
+        this.cirurgias = vet.next();
         System.out.println("Digite a data da consulta (dd/mm/yyyy): ");
         String data = vet.next();
         System.out.println("Escolha um horário disponível: ");

@@ -1,7 +1,6 @@
 package Sub_Classes;
-import java.util.Scanner;
-
 import Classe_Mae.Clinica;
+import java.util.Scanner;
 
 public class Vacinacao extends Clinica {
     String Doutor;
@@ -50,13 +49,13 @@ public class Vacinacao extends Clinica {
 	        };
     Scanner vet = new Scanner(System.in);
     System.out.println("Digite a data da vacinação (dd/mm/yyyy): ");
-    String data = vet.next();
+    this.data = vet.next();
     System.out.println("Escolha um horário disponível: ");
     for (int i = 0; i < reservas.length; i++) {
         System.out.println((i + 1) + " - " + reservas[i]);
     }
     int horario = vet.nextInt();
-    String hora = reservas[horario - 1];
+    this.hora = reservas[horario - 1];
         System.out.println("Vacinação reservada para o dia " + this.data +
             " às " + this.hora + " com o Dr. " + this.Doutor + ".");
     }

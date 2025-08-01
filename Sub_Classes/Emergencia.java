@@ -2,8 +2,11 @@ package Sub_Classes;
 
 import Classe_Mae.Clinica;
 import java.time.LocalTime;
+import java.util.Scanner;
 
 public class Emergencia extends Clinica {
+    Scanner vet = new Scanner(System.in);
+
     String Doutor;
     String data;
     String hora;
@@ -54,8 +57,11 @@ public class Emergencia extends Clinica {
     
     public void entrada() {
         LocalTime agora = LocalTime.now();
-        System.out.println("Emergência registrada para o dia " + this.data + " às " + this.hora +
-            " com o Dr. " + this.Doutor + ". Motivo: " + this.motivo +
+        System.out.println("Digite o motivo: ");
+        this.motivo = vet.next();
+
+        System.out.println("Emergência registrada"+
+            " com o " + this.Doutor + ". Motivo: " + this.motivo +
             ". Entrada registrada às: " + agora.withNano(0));
     }
 

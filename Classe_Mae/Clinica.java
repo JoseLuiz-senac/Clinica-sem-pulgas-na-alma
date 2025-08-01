@@ -9,6 +9,8 @@ public class Clinica {
     public String servico;
 
     public Clinica (String nome_C, String servico){
+        this.nome_C = nome_C;
+        this.servico = servico;
     }
         public String setnome_C(String nome_C){
             return this.nome_C = nome_C;
@@ -22,6 +24,15 @@ public class Clinica {
         this.nome_D = nome_D;
         this.nome_A = nome_A;
         this.raca_A = raca_A;
+    }
+    public String setnome_D(String nome_D){
+        return this.nome_D = nome_D;
+    }
+    public String setnome_A(String nome_A){
+        return this.nome_A = nome_A;
+    }
+    public String setraca_A(String raca_A){
+        return this.raca_A = raca_A;
     }
 
     public void escolherServico() {
